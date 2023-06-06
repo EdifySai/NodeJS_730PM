@@ -1,0 +1,36 @@
+First Application: 
+
+steps:
+
+1. create a folder 
+2. npm init and follow through the commands 
+3. cd <folder_name>
+4. create a js file 
+5. node index.js 
+
+var http = require('http');
+
+const server = http.createServer(function (req, res) {
+    res.end("Hello World ! I am responding from the server");
+})
+
+server.listen(9034, function () {
+    console.log("server started!");
+})
+
+
+REPL: Read Evaluate Print Loop 
+
+steps:
+
+go to command prompt, type node and click enter 
+
+node console will be opened and then we can write the code over there.
+
+
+NPM: Node Package Manager 
+
+In node, every project is considered as a package where each and every package is managed by the node package 
+manager.
+
+

@@ -1,0 +1,90 @@
+Understanding Global Objects:
+
+Node Provides multiple global objects that can be used to work efficiently with node.
+
+1. require:  it is used to load any module 
+
+ex:  require('http')
+
+2. __dirname:  console.log(__dirname);  used to get the dirname.
+
+3. __filename:  console.log(__filename); used to get the filename. 
+
+4. setInterval: used to set the interval to execute functions periodically.
+
+
+
+
+setInterval(function () {
+    var date = new Date();
+    console.log(date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds());
+}, 5000);
+
+5. clearTimeOut(), setTimeout()......
+
+
+Ref: https://nodejs.org/api/globals.html
+
+
+Modules:
+
+Node.js provides multiple predefined modules to work with node applications. 
+
+os module:
+
+
+var os = require('os');
+
+console.log(os.freemem());
+
+console.log(os.homedir());
+
+console.log(os.tmpdir());
+
+console.log(os.userInfo());
+
+console.log(os.totalmem());
+
+console.log(os.version());
+
+
+Path Module:
+
+If we want to work with file paths, then we can use 
+path module. 
+
+
+var path = require('path');
+
+console.log(path.extname("index.js"));
+
+console.log(path.isAbsolute("index.js"));
+
+console.log(path.isAbsolute("/Users/saikumar/Desktop/nodejs-730pm/6June2023/modulesdemo/index.js"));
+
+console.log(path.join("xyz", "abc", "index.js"));
+
+Problem Statement: 
+
+Create a file path with the follwing structure. 
+
+folder1/folder2/folder3/folder4/index.js 
+
+
+join function. 
+
+Crypto Module:
+
+Text -> encrypt and decrypt. 
+
+Problem Statement: 
+
+"digitallync" -> encrypt -> print it 
+
+  "jghsdcjsdcjvscjvsdkckk" -> decrypt -> "digitallync"
+  
+
+
+
+
+

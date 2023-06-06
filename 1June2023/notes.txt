@@ -1,0 +1,65 @@
+Streams:
+
+A stream is a flow of data where the data transfers from source to destination. 
+we have fs module to work with streams.
+
+Read Stream:
+
+var fs = require('fs');
+
+var readStream = fs.createReadStream('package.json');
+
+var data = "";
+
+readStream.on('data', function (chunk) {
+    data += chunk
+})
+
+readStream.on('end', function () {
+    console.log(data);
+})
+
+Problem Statement: 
+
+Create a server that runs on port 9099, reads data from file using streams 
+and sends the data a response.
+
+
+
+var http = require('http');
+var fs = require('fs');
+const server = http.createServer(function (req, res) {
+    
+var readStream = fs.createReadStream('package.json');
+
+var data = "";
+
+readStream.on('data', function (chunk) {
+    data += chunk
+})
+
+readStream.on('end', function () {
+    res.end(data);
+})
+})
+server.listen(9099, () => {
+    console.log("server started");
+})
+
+
+Write a file to stream:
+var fs = require('fs');
+
+var writeStream = fs.createWriteStream('root.txt');
+var data = "Hello how are you";
+
+writeStream.write(data);
+
+writeStream.on('finished', function () {
+    console.log("data written");
+})
+
+
+PS: Server -> read stream (package.json), write it to abc.json and read from 
+abc.json and send it as response to the user.
+

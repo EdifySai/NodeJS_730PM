@@ -1,0 +1,50 @@
+Event-driven programming:
+
+Any action can be considered as an event and whenever an event happens, there should be an 
+event handler. 
+
+In Node.js, We use events modules to work with events.
+
+module: events 
+
+Since node.js is event driven hence all the implementations follows events.
+
+var events = require('events');
+
+var EventEmitter = new events.EventEmitter();
+
+var userConnect = function (user) {
+    console.log(user + " connected");
+}
+EventEmitter.on('connect', userConnect);
+
+var userDisconnect = function (user) {
+    console.log(user + " disconnected");
+}
+EventEmitter.on('disconnect', userDisconnect);
+
+EventEmitter.on('message', function (messageDetails) {
+    console.log(messageDetails.name + ":" + messageDetails.message);
+})
+
+EventEmitter.emit('connect', "rajesh");
+EventEmitter.emit('message', { name: "rajesh", message: "Hello! how are you doing" })
+EventEmitter.emit("disconnect", "rajesh");
+
+
+Problem Statement: 
+
+join -> "user" joined the chat
+
+leave -> "user" left the chat 
+
+message -> "user" : "message"
+
+constraint: if the user left the chat he cannot emit the message event.
+
+
+
+
+
+
+

@@ -81,10 +81,7 @@ Problem Statement:
 
 "digitallync" -> encrypt -> print it 
 
-  "jghsdcjsdcjvscjvsdkckk" -> decrypt -> "digitallync"
+  "jghsdcjsdcjvscjvsdkckk" -> decrypt -> "digitallync".
+
+
   
-
-
-
-
-

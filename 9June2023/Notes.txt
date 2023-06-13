@@ -1,0 +1,38 @@
+Express.js:
+
+Express.js is a javascript server side framework which is used to develop 
+restful web services.
+
+Problem Statement: 
+
+Create an API that returns a list of products.
+
+
+var express = require('express');
+
+var app = express();
+
+
+var products = [
+    {
+        name: "product 1"
+    },
+    {
+        name: "product 2"
+    },
+    {
+        name: "product 3"
+    }
+];
+
+app.get('/products', function (req, res) {
+    res.send(products);
+})
+
+app.listen(9011, () => {
+    console.log("server started!");
+})
+
+
+PS:  Get the list of employees using employees API. 
+

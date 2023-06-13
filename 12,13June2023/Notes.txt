@@ -1,0 +1,22 @@
+Problem Statement: 
+
+Create an express application with the following APIs. 
+
+Inventory: 
+
+1. add item : post   itemid, name, assignedto, date 
+
+2. update Item:  for update - method :  put
+app.put('/updateItem');
+3. delete item :  for delete - method :  delete 
+app.delete('/deleteItem');
+4. List items : get()
+
+
+app.update('/updateitem', function (req, res) { 
+
+    var body = req.body;
+    // code to update the items.
+    res.send(items);
+})
+

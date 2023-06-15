@@ -1,0 +1,8 @@
+PS: Create a server, create the following string
+
+ var str= "nodejs is  async , event driven, non blocking io"; 
+
+ reverse each word of the string and send as a response to the browser.
+
+
+ 

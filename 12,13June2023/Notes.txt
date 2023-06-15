@@ -20,3 +20,11 @@ app.update('/updateitem', function (req, res) {
     res.send(items);
 })
 
+
+
+PSTMT: 
+
+Create a get, post request using router module for product management. 
+
+
+

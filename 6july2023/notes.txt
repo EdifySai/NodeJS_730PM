@@ -1,0 +1,163 @@
+Data Modelling:
+
+There are 2 ways to model the data. 
+
+1. through embedded documents:
+
+var employee = {
+    name: "kiran", 
+    address: "hyderabad", 
+    currentProject:{
+         name: 'CRM', 
+         role: 'tech-lead',
+         address:  {
+                
+                city: "hyd", 
+                state: "ts"
+         }
+    }
+}
+
+2. through references:
+
+
+ {
+    name: "kiran", 
+    address: "hyderabad", 
+    currentProject: ObjectId("_1234")
+}
+
+{        _id: ObjectId("_1234")
+         name: 'CRM', 
+         role: 'tech-lead',
+         address:  {
+                
+                city: "hyd", 
+                state: "ts"
+         }
+ }
+
+
+ Relationships in MongoDB:
+
+ 1. one to one: 
+
+ var employee = {
+    name: "kiran", 
+    address: "hyderabad", 
+    currentProject:{
+         name: 'CRM', 
+         role: 'tech-lead',
+         address:  {
+                
+                city: "hyd", 
+                state: "ts"
+         }
+    }
+}
+
+
+2. one to many:
+
+var employee = {
+    name: "kiran", 
+    address: "hyderabad", 
+    projects:[{
+         name: 'CRM', 
+         role: 'tech-lead',
+         address:  {
+                
+                city: "hyd", 
+                state: "ts"
+         }
+    }, 
+    {
+         name: 'CRM', 
+         role: 'tech-lead',
+         address:  {
+                
+                city: "hyd", 
+                state: "ts"
+         }
+    },
+    {
+         name: 'CRM', 
+         role: 'tech-lead',
+         address:  {
+                
+                city: "hyd", 
+                state: "ts"
+         }
+    },
+    {
+         name: 'CRM', 
+         role: 'tech-lead',
+         address:  {
+                
+                city: "hyd", 
+                state: "ts"
+         }
+    }
+    ]
+}
+
+3. Many to One: 
+
+{
+    _id:ObjectId(10234), 
+    name: "UPI", 
+    location:"Hyd"
+}
+
+{
+    _id:ObjectId(10235), 
+    name: "UPI", 
+    location:"Hyd"
+}
+
+{
+    name:"kiran", 
+    project:  ObjectId(10234)
+}
+
+{
+    name:"rajesh", 
+    project:  ObjectId(10234)
+}
+
+{
+    name:"ramesh", 
+    project:  ObjectId(10234)
+}
+
+Many to Many: 
+
+{
+    _id:ObjectId(10234), 
+    name: "UPI", 
+    location:"Hyd"
+}
+
+{
+    _id:ObjectId(10235), 
+    name: "UPI", 
+    location:"Hyd"
+}
+
+
+{
+    name:"kiran", 
+    projects:  [ObjectId(10234),ObjectId(10235)]
+}
+
+{
+    name:"rajesh", 
+    projects:  [ObjectId(10234),ObjectId(10235)]
+}
+
+{
+    name:"ramesh", 
+     projects:  [ObjectId(10234),ObjectId(10235)]
+}
+
+

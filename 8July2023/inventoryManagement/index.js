@@ -56,16 +56,33 @@ app.delete('/deleteItem/:id', function (req, res) {
     )
 
 })
-
-
 app.put('/updateItem', function (req, res) {
-
+    var body = req.body;
+    ModelRef.findOneAndUpdate({ itemId: body.itemId }, body).then(
+        response => {
+            console.log(response);
+            res.send(response);
+        },
+        error => {
+            console.log(error);
+            res.send(error);
+        }
+    )
 });
 
 app.get("/item/:id", function (req, res) {
-    //ModelRef.findOne()
+    var ItemId = req.params.id;
+    ModelRef.findOne({ itemId: ItemId }).then(
+        response => {
+            console.log(response);
+            res.send(response);
+        },
+        error => {
+            console.log(error);
+        }
+    )
 
-})
+});
 
 app.get("/items", function (req, res) {
     ModelRef.find({}).then(

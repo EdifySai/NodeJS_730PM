@@ -1,11 +1,15 @@
 var UserModel = require('../model/user.model');
+var Email = require('../utils/email');
 exports.add = async (req, res) => {
     var body = req.body;
     try {
         var User = new UserModel(body);
         var response = await User.save();
+
         console.log("response", response);
+        Email.sendEmail(body.emailid);
         res.send(response);
+
     } catch (error) {
         console.log("error", error)
     }

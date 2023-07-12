@@ -1,6 +1,6 @@
 const sgMail = require('@sendgrid/mail')
 exports.sendEmail = function (toEmail) {
-    // code
+    console.log("Sendig email");
     sgMail.setApiKey("");
     const msg = {
         to: toEmail, // Change to your recipient

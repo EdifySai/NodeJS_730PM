@@ -49,3 +49,18 @@ exports.list = async (req, res) => {
         console.log(error);
     }
 }
+
+exports.forgotPassword = async (req, res) => {
+    var body = req.body;
+    try {
+        var response = await UserModel.findOne({ emailid: body.emailid });
+        console.log(response);
+        if (response._id) {
+            // send email
+        }
+        res.send(response);
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
